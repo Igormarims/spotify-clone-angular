@@ -12,4 +12,8 @@ export class PlayerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   ff() {
+    console.log('clicou em filho');
+    
+   }
 }
