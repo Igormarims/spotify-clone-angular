@@ -22,7 +22,7 @@ export class PainelEsquerdoComponent implements OnInit {
   playlistIcone = faMusic
 
   constructor(private spotifyService: SpotifyService,
-     private router: Router) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     this.buscarPlaylists();
@@ -30,7 +30,7 @@ export class PainelEsquerdoComponent implements OnInit {
   
    botaoClick(botao: string) {
      this.menuSelecionado = botao;
-    //  this.router.navigateByUrl('player')
+     this.router.navigateByUrl('player/home')
     } 
 
  async  buscarPlaylists() {

@@ -20,12 +20,13 @@ export class RodapeUsuarioComponent implements OnInit {
     this.spotifyService.inicializarUsuario().then(usuario => {
       this.usuario = usuario;
     });
-    
-    
-     
-    
   }
 
+ logout() {
+  console.log('fun');
+  
+  this.spotifyService.logout();
+ }  
   
 
 

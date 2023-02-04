@@ -1,6 +1,11 @@
 <div class="flex" >
-    <img [src]="usuario?.imagemUrl" alt="">
+    <img [src]="usuario?.imagemUrl" alt="Foto do usuário">
     <span>{{ this.usuario?.nome }}</span>
-    <fa-icon class="icone"  [icon]="sairIcone"></fa-icon>
+    <fa-icon 
+         class="icone" 
+         [icon]="sairIcone"
+         (click)="logout()"
+         >
+    </fa-icon>
 </div>
 

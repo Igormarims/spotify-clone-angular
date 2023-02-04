@@ -1,3 +1,5 @@
+import { TopArtistaComponent } from './../../components/top-artista/top-artista.component';
+import { HomeComponent } from './../home/home.component';
 import { RodapeUsuarioComponent } from './../../components/rodape-usuario/rodape-usuario.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BotaoMenuComponent } from './../../components/botao-menu/botao-menu.component';
@@ -15,7 +17,9 @@ import { SpotifyService } from 'src/app/services/spotify.service';
     PlayerComponent,
     PainelEsquerdoComponent,
     BotaoMenuComponent,
-    RodapeUsuarioComponent
+    RodapeUsuarioComponent,
+    HomeComponent,
+    TopArtistaComponent
   ],
   imports: [
     CommonModule,
