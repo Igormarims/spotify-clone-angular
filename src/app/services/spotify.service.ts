@@ -1,8 +1,10 @@
+import { IPlaylist } from './../models/IPlaylist';
 import { IUsuario } from './../models/IUsuario';
 import { Injectable } from '@angular/core';
 import { SpotifyConfiguration } from 'src/environments/environment';
 import  Spotify  from 'spotify-web-api-js';
-import { spotifyUserParaUsuario } from '../common/spotifyHelper';
+import { spotifyPlaylistParaPlaylist, spotifyUserParaUsuario } from '../common/spotifyHelper';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +13,20 @@ export class SpotifyService {
   
    spotifyApi: Spotify.SpotifyWebApiJs =  null;
    usuario: IUsuario;
-
+   
+   
   constructor() { 
-    this.spotifyApi = new Spotify();
+    this.spotifyApi = new Spotify();  
+    
   }
+
 
   async inicializarUsuario() {
     if(this.usuario) {
       return true;
     }
+
+   
 
    const token = localStorage.getItem('token');
         if(!token){
@@ -30,17 +37,29 @@ export class SpotifyService {
        try {
          this.definirAccessToken(token);
          await this.obterSpotifyUsuario()
+         
+         console.log(this.usuario, 'usuario do sub');
+         
+        
+        //  console.log(this.us, 'US');
          return this.usuario;
+         
+         
         
        } catch (e) {
         return false;
+       }finally{
+        console.log(this.usuario, 'usuario spotifyy');
        }
+
+      
+       
   }
 
  async obterSpotifyUsuario() {
     const userInfo = await this.spotifyApi.getMe();
      this.usuario = spotifyUserParaUsuario(userInfo);
-    console.log(userInfo, 'usuario spotify');
+    console.log(this.usuario, 'user', userInfo);
     
   }
 
@@ -66,5 +85,19 @@ export class SpotifyService {
     localStorage.setItem('token', token);
     
  }
+
+ async buscarPlaylistUsuario(offset = 0, limit = 50): Promise<IPlaylist[]> {
+  const playlists = await this.spotifyApi.getUserPlaylists(this.usuario?.id, { offset, limit });
+   console.log(playlists, 'play aqui');
+   // esse forma é a mesma do return de baixo
+  //  return  playlists.items.map(x => spotifyPlaylistParaPlaylist(x));
+return playlists?.items.map(spotifyPlaylistParaPlaylist);
+ }
+
+
+ get user() {
+  return this.usuario;
+ }
+
 
 }
