@@ -30,4 +30,8 @@ obterArtistas(musica: IMusica) {
   return musica.artistas.map(artista => artista.nome).join(', ');
 }
 
+executarMusica(musica: IMusica) {
+  this.sportifyService.executarMusica(musica.id);
+}
+
 }

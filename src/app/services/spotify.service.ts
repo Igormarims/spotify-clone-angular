@@ -109,6 +109,12 @@ return playlists?.items.map(spotifyPlaylistParaPlaylist);
    
  }
 
+ async executarMusica(musicaId: string) {
+    await this.spotifyApi.queue(musicaId);
+    await this.spotifyApi.skipToNext();
+
+ }
+
 logout() {
   localStorage.clear();
   this.router.navigate(['/login'])
