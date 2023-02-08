@@ -1,3 +1,4 @@
+import { PainelDireitoComponent } from './../../components/painel-direito/painel-direito.component';
 import { TopArtistaComponent } from './../../components/top-artista/top-artista.component';
 import { HomeComponent } from './../home/home.component';
 import { RodapeUsuarioComponent } from './../../components/rodape-usuario/rodape-usuario.component';
@@ -19,7 +20,8 @@ import { SpotifyService } from 'src/app/services/spotify.service';
     BotaoMenuComponent,
     RodapeUsuarioComponent,
     HomeComponent,
-    TopArtistaComponent
+    TopArtistaComponent,
+    PainelDireitoComponent
   ],
   imports: [
     CommonModule,

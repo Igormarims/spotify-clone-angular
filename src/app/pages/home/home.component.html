@@ -2,10 +2,39 @@
   <span class="titulo-bg mt-4">
     Seu Top Artista
   </span>
-  <app-top-artista></app-top-artista>
-</div>
 
-<div class="painel-direito">
+  <app-top-artista class="mt-2"></app-top-artista>
+ 
+  <span class="titulo-bg mt-4">
+    Musicas Curtidas
+  </span>
+
+  <table class="table mt-3">
+    <thead>
+       <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Artista</th>
+        <th>Tempo</th>
+        <th>Album</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let musica of musicas">
+           <td>
+             <fa-icon [icon]="playIcone"></fa-icon>
+           </td>
+           <td>{{musica.titulo}}</td>
+           <td>{{obterArtistas(musica)}}</td>
+           <td>{{ musica.tempo }}</td>
+           <td>{{ musica.album.nome }}</td>
+        </tr>
+    </tbody>
+     
+  </table>
     
 </div>
+
+<app-painel-direito class="painel-direito"></app-painel-direito>
+
 

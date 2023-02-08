@@ -46,3 +46,13 @@ html, body {
     }
   }
 }
+
+.p-20 {
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 0 0 15px $preto-transparent-03;
+    background-color: $branco;
+    border-radius: 10px;
+}
