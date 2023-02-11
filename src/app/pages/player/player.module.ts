@@ -1,3 +1,4 @@
+import { BuscasRecentesComponent } from './../../components/buscas-recentes/buscas-recentes.component';
 import { PainelDireitoComponent } from './../../components/painel-direito/painel-direito.component';
 import { TopArtistaComponent } from './../../components/top-artista/top-artista.component';
 import { HomeComponent } from './../home/home.component';
@@ -10,6 +11,7 @@ import { PlayerComponent } from './player/player.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpotifyService } from 'src/app/services/spotify.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,12 +23,14 @@ import { SpotifyService } from 'src/app/services/spotify.service';
     RodapeUsuarioComponent,
     HomeComponent,
     TopArtistaComponent,
-    PainelDireitoComponent
+    PainelDireitoComponent,
+    BuscasRecentesComponent
   ],
   imports: [
     CommonModule,
     PlayerRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers:[SpotifyService]
 })

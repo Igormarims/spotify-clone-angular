@@ -1,3 +1,4 @@
+import { newMusica } from 'src/app/common/factories';
 import { IMusica } from './../models/IMusica';
 import { IArtista } from './../models/IArtista';
 import { IPlaylist } from './../models/IPlaylist';
@@ -36,7 +37,10 @@ export function spotifyArtistaParaArtista(spotifyArtista: SpotifyApi.ArtistObjec
 }
 
 export function spotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull):IMusica {
-   
+       
+    if(!spotifyTrack)
+    return newMusica();
+
     const msParaMinutos = (ms: number) => {
          const data = addMilliseconds(new Date(0),ms)
          return format(data, 'mm:ss')
