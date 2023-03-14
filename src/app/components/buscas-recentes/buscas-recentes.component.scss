@@ -1,7 +1,7 @@
 
 @import 'variaveis';
 :host {
-    
+
     input {
         width: 100%;
         padding: 10px 5px;
@@ -11,7 +11,7 @@
         color: $cor-primaria;
         font-size: 1rem;
         font-weight: 500;
-        
+
         &::placeholder {
             color: $preto-transparent-30;
             font-size: .85rem;
@@ -24,10 +24,10 @@
     }
 
     .sugestoes {
-        flex-wrap: wrap; 
-        
+        flex-wrap: wrap;
+
         span {
-         background-color: $branco;  
+         background-color: $branco;
           margin-right: 5px;
           padding: 5px 10px;
           color: $preto-transparent-70;
@@ -35,6 +35,12 @@
           margin-top: 10px;
           font-size: .9rem;
           border-radius: 20px;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $cor-primaria;
+            color: $branco;
+          }
 
 
         }

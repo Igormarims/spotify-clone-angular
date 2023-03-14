@@ -11,7 +11,7 @@ export class BuscasRecentesComponent implements OnInit {
       'Top Brasil',
       'Top Global',
       'Esquenta Sertanejo',
-      'Funk Hits', 
+      'Funk Hits',
       'Pagodeira'
   ];
 
@@ -20,6 +20,15 @@ export class BuscasRecentesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  definirPesquisa(pesquisa: string ) {
+     this.campoPesquisa = pesquisa;
+  }
+
+  buscar() {
+    console.log(this.campoPesquisa);
+
   }
 
 }

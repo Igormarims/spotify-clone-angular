@@ -12,6 +12,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { FormsModule } from '@angular/forms';
+import { TopArtistasComponent } from './../../components/top-artistas/top-artistas.component';
 
 
 
@@ -24,10 +25,12 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     TopArtistaComponent,
     PainelDireitoComponent,
-    BuscasRecentesComponent
+    BuscasRecentesComponent,
+    TopArtistasComponent
   ],
   imports: [
-    CommonModule,
+
+  CommonModule,
     PlayerRoutingModule,
     FontAwesomeModule,
     FormsModule
