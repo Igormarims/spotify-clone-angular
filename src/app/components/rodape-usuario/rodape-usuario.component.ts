@@ -9,10 +9,10 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./rodape-usuario.component.scss']
 })
 export class RodapeUsuarioComponent implements OnInit {
-  
+
    sairIcone = faSignOutAlt;
    usuario?: IUsuario | any;
-   
+
 
   constructor(private spotifyService: SpotifyService ) { }
 
@@ -23,11 +23,11 @@ export class RodapeUsuarioComponent implements OnInit {
   }
 
  logout() {
-  console.log('fun');
-  
+  // console.log('fun');
+
   this.spotifyService.logout();
- }  
-  
+ }
+
 
 
 }

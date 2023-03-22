@@ -27,7 +27,7 @@ export class BuscasRecentesComponent implements OnInit {
   }
 
   buscar() {
-    console.log(this.campoPesquisa);
+    // console.log(this.campoPesquisa);
 
   }
 

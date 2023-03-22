@@ -12,7 +12,7 @@ import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg
 export class PainelEsquerdoComponent implements OnInit {
 
   menuSelecionado = '';
-  
+
   playlist: IPlaylist[] = [];
 
   // Icons
@@ -27,15 +27,15 @@ export class PainelEsquerdoComponent implements OnInit {
   ngOnInit(): void {
     this.buscarPlaylists();
   }
-  
+
    botaoClick(botao: string) {
      this.menuSelecionado = botao;
      this.router.navigateByUrl('player/home')
-    } 
+    }
 
  async  buscarPlaylists() {
-    this.playlist = await this.spotifyService.buscarPlaylistUsuario();  
-    console.log(this.playlist, 'playlist do back');
-    
+    this.playlist = await this.spotifyService.buscarPlaylistUsuario();
+    // console.log(this.playlist, 'playlist do back');
+
    }
 }

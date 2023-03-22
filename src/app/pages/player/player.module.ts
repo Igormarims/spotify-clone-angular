@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { FormsModule } from '@angular/forms';
 import { TopArtistasComponent } from './../../components/top-artistas/top-artistas.component';
+import { ArtistaItemImagemComponent } from 'src/app/components/artista-item-imagem/artista-item-imagem.component';
+import { PlayerCardComponent } from 'src/app/components/player-card/player-card.component';
 
 
 
@@ -26,7 +28,9 @@ import { TopArtistasComponent } from './../../components/top-artistas/top-artist
     TopArtistaComponent,
     PainelDireitoComponent,
     BuscasRecentesComponent,
-    TopArtistasComponent
+    TopArtistasComponent,
+    ArtistaItemImagemComponent,
+    PlayerCardComponent
   ],
   imports: [
 

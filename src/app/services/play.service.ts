@@ -29,4 +29,12 @@ export class PlayService {
     this.musicaAtual.next(musica);
   }
 
+  voltarMusica() {
+    this.spotifyService.voltarMusica();
+  }
+
+  proximaMusica() {
+    this.spotifyService.proximaMusica();
+  }
+
 }

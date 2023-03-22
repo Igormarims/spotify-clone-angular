@@ -9,7 +9,7 @@ import { newArtista } from 'src/app/common/factories';
   styleUrls: ['./top-artista.component.scss']
 })
 export class TopArtistaComponent implements OnInit {
-   
+
   topArtista: IArtista = newArtista();
 
   constructor(private spotifyService: SpotifyService) { }
@@ -20,8 +20,8 @@ export class TopArtistaComponent implements OnInit {
 
   buscarArtista() {
    const artistas = this.spotifyService.buscarTopArtistas(1);
-   console.log(artistas, 'aaaaaaaaaa');
-   
+  //  console.log(artistas, 'aaaaaaaaaa');
+
     if(artistas){
     //  this.topArtista = artistas.pop();
     }

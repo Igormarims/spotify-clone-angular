@@ -13,8 +13,8 @@ export function spotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileRespo
         imagemUrl: user?.images.pop()?.url
     }
 
-    console.log(obj, 'log obj');
-    
+    // console.log(obj, 'log obj');
+
 
     return obj;
 }
@@ -37,7 +37,7 @@ export function spotifyArtistaParaArtista(spotifyArtista: SpotifyApi.ArtistObjec
 }
 
 export function spotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull):IMusica {
-       
+
     if(!spotifyTrack)
     return newMusica();
 
@@ -45,8 +45,8 @@ export function spotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull)
          const data = addMilliseconds(new Date(0),ms)
          return format(data, 'mm:ss')
     }
-   
-   
+
+
     return {
         id: spotifyTrack.uri,
         titulo: spotifyTrack.name,

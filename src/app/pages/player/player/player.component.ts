@@ -13,7 +13,7 @@ export class PlayerComponent implements OnInit {
   }
 
    ff() {
-    console.log('clicou em filho');
-    
+    // console.log('clicou em filho');
+
    }
 }
