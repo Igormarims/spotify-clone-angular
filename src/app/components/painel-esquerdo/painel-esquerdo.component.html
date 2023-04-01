@@ -1,18 +1,18 @@
-<div class="menus flex">
+ <div class="menus flex">
    <div class="image-container flex flex-center">
-        <img src="assets/images/spotify-logo.png" 
+        <img src="assets/images/spotify-logo.png"
              alt="Logo do Spotify">
    </div>
 
    <div class="menu-container flex opcoes">
-      <app-botao-menu 
+      <app-botao-menu
               [descricao]="'Home'"
               [selecionado]="menuSelecionado === 'Home'"
               (clickk)="botaoClick($event)"
       >
           <fa-icon [icon]="homeIcone"></fa-icon>
       </app-botao-menu>
-     
+
       <app-botao-menu
               [descricao]="'Pesquisar'"
             [selecionado]="menuSelecionado === 'Pesquisar'"
@@ -20,8 +20,8 @@
             >
             <fa-icon [icon]="pesquisarIcone"></fa-icon>
       </app-botao-menu>
-     
-      <app-botao-menu 
+
+      <app-botao-menu
               [descricao]="'Artista'"
               [selecionado]="menuSelecionado === 'Artista'"
               (clickk)="botaoClick($event)"
@@ -34,15 +34,15 @@
         <span class="playlist-titulo">
            PLAYLIST
         </span>
-       
+
         <div class="playlist-scroll">
              <app-botao-menu
                  *ngFor="let play of playlist"
                 [descricao]="play.nome"
-                [selecionado]="menuSelecionado === play.nome"
-                (clickk)="botaoClick($event)"
+                [selecionado]="menuSelecionado === play.id"
+                (clickk)="irParaPlaylist(play.id)"
              >
-                 <fa-icon [icon]="playlistIcone"></fa-icon>    
+                 <fa-icon [icon]="playlistIcone"></fa-icon>
         </app-botao-menu>
       </div>
    </div>

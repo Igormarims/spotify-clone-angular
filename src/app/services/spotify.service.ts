@@ -4,7 +4,7 @@ import { IUsuario } from './../models/IUsuario';
 import { Injectable } from '@angular/core';
 import { SpotifyConfiguration } from 'src/environments/environment';
 import  Spotify  from 'spotify-web-api-js';
-import { spotifyArtistaParaArtista, spotifyPlaylistParaPlaylist, spotifyTrackParaMusica, spotifyUserParaUsuario } from '../common/spotifyHelper';
+import { SpotifySinglePlalistParaPlaylist, spotifyArtistaParaArtista, spotifyPlaylistParaPlaylist, spotifyTrackParaMusica, spotifyUserParaUsuario } from '../common/spotifyHelper';
 import { Router } from '@angular/router';
 import { IArtista } from '../models/IArtista';
 import { from, Observable } from 'rxjs';
@@ -95,8 +95,23 @@ export class SpotifyService {
   //  console.log(playlists, 'play aqui');
    // esse forma é a mesma do return de baixo
   //  return  playlists.items.map(x => spotifyPlaylistParaPlaylist(x));
-return playlists?.items.map(spotifyPlaylistParaPlaylist);
+  return playlists?.items.map(spotifyPlaylistParaPlaylist);
  }
+
+ async buscarMusicasPlaylist(playlistId: string, offset = 0 , limit = 50) {
+   const playlistSpotify = await this.spotifyApi.getPlaylist(playlistId);
+    if(!playlistSpotify){
+      return null;
+    }
+
+    const playlist = SpotifySinglePlalistParaPlaylist(playlistSpotify);
+    const musicasSpotify = await this.spotifyApi.getPlaylistTracks(playlistId, { offset , limit});
+
+    playlist.musicas = musicasSpotify.items.map(musica => spotifyTrackParaMusica(musica.track as SpotifyApi.TrackObjectFull));
+
+    return playlist;
+ }
+
 
  async buscarTopArtistas(limit = 10): Promise<IArtista[]> {
   const artistas = await this.spotifyApi.getMyTopArtists({limit})

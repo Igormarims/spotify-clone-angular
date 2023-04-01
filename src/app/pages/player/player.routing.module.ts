@@ -2,6 +2,7 @@ import { HomeComponent } from './../home/home.component';
 import { PlayerComponent } from './player/player.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes  } from '@angular/router';
+import { ListaMusicasComponent } from '../lista-musicas/lista-musicas.component';
 
  const routes :Routes = [
     {
@@ -10,6 +11,10 @@ import { RouterModule, Routes  } from '@angular/router';
         {
             path:'home',
             component: HomeComponent
+        },
+        {
+          path:'lista/:tipo/:id',
+          component: ListaMusicasComponent
         }
      ]
     }
@@ -19,7 +24,8 @@ import { RouterModule, Routes  } from '@angular/router';
 @NgModule({
     declarations:[],
     imports: [
-        RouterModule.forChild(routes) 
+
+    RouterModule.forChild(routes)
     ],
     exports:[RouterModule]
 })
